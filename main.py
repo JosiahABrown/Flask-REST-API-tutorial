@@ -5,9 +5,9 @@ app = Flask(__name__)
 api = Api(app)
 
 video_put_args = reqparse.RequestParser()
-video_put_args.add_argument("name", type=str, help="Name of the Video")
-video_put_args.add_argument("views", type=int, help="Views of the Video")
-video_put_args.add_argument("likes", type=int, help="Likes of the Video")
+video_put_args.add_argument("name", type=str, help="Name of the Video", required=True)
+video_put_args.add_argument("views", type=int, help="Views of the Video", required=True)
+video_put_args.add_argument("likes", type=int, help="Likes of the Video", required=True)
 
 videos = {}
 
